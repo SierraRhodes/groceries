@@ -4,10 +4,11 @@ function handleForm(event) {
   //Creating Array
   const userSelections = document.querySelectorAll("input[name=groceries]:checked");
   const userSelectionsArray = Array.from(userSelections);
-  userSelectionsArray.sort();
+
   
-  const userSelectionsArray2 = String.prototype.toUpperCase.apply(userSelectionsArray).split(",");
-  console.log(userSelectionsArray2)
+  const userSelectionsArray2 = String.prototype.toUpperCase.apply(userSelectionsArray).split("");
+  userSelectionsArray2.sort();
+  console.log(userSelectionsArray2);
 
   //Looping Through Array
   userSelectionsArray.forEach(function(element) {
@@ -24,5 +25,4 @@ function handleForm(event) {
 window.addEventListener("load", function() {
   document.querySelector("form")
 addEventListener("submit", handleForm)
-
 });
